@@ -8,14 +8,12 @@ const bodyParser = require("body-parser");
 var cors = require("cors");
 require('dotenv').config();
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+
+// var usersRouter = require('./routes/users');
 
 var app = express();
 
 // Cors handling
-// var corsOptions = { origin: `http://localhost:8081`};
-// app.use(cors(corsOptions));
 app.use(cors());
 
 // parse requests of content-type - application/json
@@ -35,8 +33,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
+var indexRouter = require('./routes/index');
 app.use('/', indexRouter);
-// app.use('/users', usersRouter);
 require('./routes/auth')(app);
 require('./routes/users')(app);
 require('./routes/bookRoutes')(app);
