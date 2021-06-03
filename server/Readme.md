@@ -1,6 +1,7 @@
 # MERN Server 
 
 ## Usage
+- Rename `.env-example` file to `.env` by `$ mv .env-example .env`
 - Install dependencies with `$ npm install`.
 - Run the application `$ npm run start` or `$ npm run start:watch` to watch for changes.
 
